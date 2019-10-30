@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block content %}
+<div class ="container">
+    <div class="card-header">
+        <h3 style="color:whitesmoke;">Are you a Student ?  </h3>
+    </div>
+    <form action="" enctype="multipart/form-data" method="post" >
+    {% csrf_token %}
+        {{form.as_p}}
+    <button type="submit">Submit</button> 
+</form> 
+    </div>
+{% endblock%}

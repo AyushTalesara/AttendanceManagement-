@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% block content%}
+ <div class="container">
+ <!---heading---->
+ <h1 style="color:whitesmoke;"> Register</h1><hr></hr>
+	<!---Form starting----> 
+	<div class="row ">
+     <!--- For Name---->
+    <form  action="" enctype="multipart/form-data" method="POST">
+    {% csrf_token %} 
+    <div class="col-sm-12">
+            <div class="row">
+                <div class="col-xs-4">
+                      <label class="firstname">USN</label> 
+                </div>
+                <div class="col-xs-8">
+                    <input type="text" name="usn" id="usn" placeholder="usn" class="form-control ">
+                </div>
+            </div>
+    </div>
+         <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+                       <label class="firstname">First Name :</label> 
+                    </div>
+		         <div class="col-xs-8">
+		             <input type="text" name="first_name" id="first_name" placeholder="Enter your First Name" class="form-control ">
+                 </div>
+		      </div>
+		 </div>
+		 
+		 
+         <div class="col-sm-12">
+		     <div class="row">
+			     <div class="col-xs-4">
+                     <label class="lastname">Last Name :</label></div>
+				<div class ="col-xs-8">	 
+		             <input type="text" name="last_name" id="last_name" placeholder="Enter your Last Name" class="form-control last">
+                </div>
+		     </div>
+		 </div>
+     <!-----For email---->
+		 <div class="col-sm-12">
+		     <div class="row">
+			     <div class="col-xs-4">
+		             <label class="mail" >Email :</label></div>
+			     <div class="col-xs-8"	>	 
+			          <input type="email" name="email"  id="email"placeholder="Enter your email" class="form-control" >
+		         </div>
+		     </div>
+         </div>
+         <div class="col-sm-12">
+            <div class="row">
+                <div class="col-xs-4">
+                    <label class="mail" >Choose Your Subjects</label></div>
+                    {% for subj in sub %}
+
+                    <input type="checkbox" name="multip" id="{{subj.subcode}}" value={{subj.subcode}} />
+                    <label for="{{subj.subcode}}"><b>{{subj.subcode}}</b></label>
+                    
+                    {% endfor %}
+            </div>
+        </div>
+		  
+         <div class="col-sm-12">
+		     <div class="col-sm-12">
+                    <input type="submit" value="Submit">
+		   </div>
+         </div>
+        </form>
+	 </div>	 
+		 		 
+    	
+</div>
+{% endblock %}

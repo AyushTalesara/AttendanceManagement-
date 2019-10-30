@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta name="description" content="">
+    <meta name="author" content=""> -->
+
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <!-- <link href="{% static 'style.css' %}" rel="stylesheet">  -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="{% static 'jquery.min.js' %}"></script>
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" /> 
+
+  </head>
+
+  <body>
+      <nav class="navbar navbar-inverse">
+          <div class="container-field">
+              <!-- Header -->
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href='/'>aSH</a>
+              </div>
+              <div class="collapse navbar-collapse" id="topNavBar">
+                  <ul class="nav navbar-nav">
+      
+                      <li class="">
+                          <a href="/">
+                              <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Home
+                          </a>
+                      </li>
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="">
+                          <a href="{% url 'test:register' %} ">
+                              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Register
+                          </a>
+                      </li>
+                      <li class="">
+                          <a href="{% url 'test:login' %}">
+                              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;LogIn
+                          </a>
+                      </li>
+      
+      
+                  <li class="">
+                          <a href="{% url 'test:logout' %}">
+                              <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                          </a>
+                      </li>
+                  </ul>
+      
+              </div>
+      
+          </div>
+      </nav>
+
+    {% block content %}
+    {% endblock %}
+    <footer style="background-color: rgb(28, 28, 28);padding:2em 0;margin-top:1em;">
+      <p class="text-center" style="margin-bottom:0;color:#fff">Created by Ayush as a Database Management Project</p>
+    </footer>
+    <!-- Custom scripts for this template -->
+    <script src="{% static 'bootstrap/bootstrap.min.js' %}"></script>
+    <!-- <script src="{% static 'js/particles.min.js' %}" ></script>
+    <script src="{% static 'script.js' %}"></script> -->
+
+  </body>
+
+</html>

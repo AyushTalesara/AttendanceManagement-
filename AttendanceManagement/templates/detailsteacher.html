@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{%load static%}
+{% block content %}
+<div class="container">
+
+  <!-- <ul>
+    <li>{{record.first_name}} {{record.last_name}}</li>
+    <li>{{record.occupation}}</li>
+    <li>{{record.residence}}, {{record.country}}</li>
+  </ul> -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1" style="padding-top:3em;padding-bottom:3em;-webkit-box-shadow: 0px 0px 14px 0px rgba(50, 50, 50, 0.5);
+-moz-box-shadow:    0px 0px 14px 0px rgba(50, 50, 50, 0.5);
+box-shadow:         0px 0px 14px 0px rgba(50, 50, 50, 0.5);">
+        <div class="col-md-5">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <img src="/static/ml/dataset/user.{{teacher.pid}}.7.jpg " class="img-responsive" style="border-radius:50%"/>
+            </div>
+            <div class="col-md-12" style="text-align:center">
+              <h3 style="color:#d18f02"><b>{{teacher.first_name}} {{teacher.last_name}}</b></h3>
+              <h5><b>PID: </b> {{teacher.pid}} </h5>
+              <!-- <h5><b>Email: </b> {{student.email}} </h5> -->
+              <h5><b>Subjects: </b> {% for i in subje %}
+                <h5><b>{{i.subcode}} </b> 
+                  {% endfor%}
+                  <h5><b>Total Attendance: </b>
+                <h5><b>{{teacher.attendance}} / {{differ}} </b>
+
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-md-7">
+          <h3>Bio</h3>
+          <p>
+            {{record.bio}}
+          </p>
+        </div> -->
+        <div class="col-md-12" style="margin-top:2em">
+          <a href="/" class="btn btn-warning"><i class="fa fa-chevron-left" aria-hidden="true"></i> Home</a>
+          <a href="{% url 'test:teacher-update' teacher.pid %}" class="btn btn-warning"><i class="fa fa-chevron-left" aria-hidden="true"></i> Edit</a>
+          <a href="{% url 'test:create_dataset' teacher.pid %}" class="btn btn-warning"><i class="fa fa-chevron-left" aria-hidden="true"></i> Update Face ID</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

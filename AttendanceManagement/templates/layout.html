@@ -44,13 +44,18 @@
                   </ul>
                   <ul class="nav navbar-nav navbar-right">
                       <li class="">
-                          <a href="{% url 'test:register' %} ">
-                              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Register
+                          <a href="{% url 'test:check' %} ">
+                              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp; Profile
                           </a>
                       </li>
                       <li class="">
+                        <a href="{% url 'test:register' %} ">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Register
+                        </a>
+                    </li>
+                      <li class="">
                           <a href="{% url 'test:login' %}">
-                              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;LogIn
+                              <span class="glyphicon glyphicon-log-in" aria-hidden="true"></span>&nbsp;LogIn
                           </a>
                       </li>
       

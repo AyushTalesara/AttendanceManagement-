@@ -12,7 +12,10 @@ urlpatterns = [
     url(r'teacherupdate/(?P<pk>[0-9]+)/$',views.teacherUpdate.as_view(),name='teacher-update'),
     url(r'studentdetails/(?P<id>[0-9]+)/$',views.StudentDetails,name='student-details'),
     url(r'detailsteacher/(?P<id>[0-9]+)/$',views.DetailsTeacher,name='details-teacher'),
-    url(r'faceupdate/(?P<id>[0-9]+)/$',views.create_dataset,name='create_dataset')
+    url(r'faceupdate/(?P<id>[0-9]+)/$',views.create_dataset,name='create_dataset'),
+    url(r'^check/$',views.check,name='check'),
+
+
 
 
 ]

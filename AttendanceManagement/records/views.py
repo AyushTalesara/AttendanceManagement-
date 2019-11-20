@@ -49,7 +49,19 @@ def register(request):
             #         return redirect('music:index')
             
         return redirect('test:fchoice')
-    
+def check(request):
+    try:
+        if request.user.is_authenticated:
+            username12=request.user.username
+            tripi=student.objects.filter(usn=username12)
+            if tripi:
+                return redirect('test:student-details',username12)
+            else:
+                return redirect('test:details-teacher',username12 ) 
+        else:
+            return redirect('test:login')  
+    except:
+        return redirect('test:logout')
 def login_1(request):
     template_name='login.html'
     if request.method=="POST":
@@ -175,7 +187,7 @@ f_date=date(2019,9,15)
 now = datetime.datetime.now()
 l_date=date(now.year,now.month,now.day)
 dayst=np.busday_count(f_date,l_date)
-print("This is working ")
+#print("This is working ")
 
 def StudentDetails(request,id):
     

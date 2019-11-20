@@ -7,3 +7,10 @@ body{
 .navbar-brand{
     font-family: 'Satisfy',cursive;
 }
+a.error{
+    font-style: bold;
+    font-weight: bold;
+    font-size : 50em;
+    font-family:  'Satisfy',cursive;
+
+}

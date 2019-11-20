@@ -171,10 +171,11 @@ class teacherUpdate(UpdateView):
 #         'record' : record
 #     }
 #     return render(request, 'details.html', context)
-f_date=date(2019,9,25)
+f_date=date(2019,9,15)
 now = datetime.datetime.now()
 l_date=date(now.year,now.month,now.day)
-differ=(l_date - f_date)
+dayst=np.busday_count(f_date,l_date)
+print("This is working ")
 
 def StudentDetails(request,id):
     
@@ -183,7 +184,7 @@ def StudentDetails(request,id):
     context={
         'student':student1,
         'attenda':attenda,
-        'differ':differ.days
+        'differ':dayst
 
     }
     return render(request,'detailstudent.html',context)
@@ -193,7 +194,7 @@ def DetailsTeacher(request,id):
     context={
         'teacher':teacher1,
         'subje':subje,
-        'differ':differ.days
+        'differ':dayst
 
 
     }

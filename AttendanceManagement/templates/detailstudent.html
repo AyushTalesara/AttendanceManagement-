@@ -25,6 +25,7 @@ box-shadow:         0px 0px 14px 0px rgba(50, 50, 50, 0.5);">
               <h5><b>Subjects Applied :  Attendance </b> {% for i in attenda %}
               <h5><b>{{i.subcode}} : {{i.attendance}}/{{differ}}</b> </h5>
                   {% endfor%}
+              </div>
             </div>
           </div>
         </div>
@@ -36,8 +37,8 @@ box-shadow:         0px 0px 14px 0px rgba(50, 50, 50, 0.5);">
         </div> -->
         <div class="col-md-12" style="margin-top:2em">
           <a href="/" class="btn btn-warning"><i class="fa fa-chevron-left" aria-hidden="true"></i> Home</a>
-          <a href="{% url 'test:student-update' student.usn %}" class="btn btn-warning"><i class="fa fa-chevron-left" aria-hidden="true"></i> Edit</a>
-          <a href="{% url 'test:create_dataset' student.usn %}" class="btn btn-warning"><i class="fa fa-chevron-left" aria-hidden="true"></i> Update Face ID</a>
+          <a href="{% url 'test:student-update' student.usn %}" class="btn btn-primary"><i class="fa fa-chevron-left" aria-hidden="true"></i> Edit</a>
+          <a href="{% url 'test:create_dataset' student.usn %}" class="btn btn-primary"><i class="fa fa-chevron-left" aria-hidden="true"></i> Update Face ID</a>
         </div>
       </div>
     </div>

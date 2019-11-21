@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{%load static%}
+{% block content %}
+<div class="container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1" style="padding-top:3em;padding-bottom:3em;-webkit-box-shadow: 0px 0px 14px 0px rgba(50, 50, 50, 0.5);
+-moz-box-shadow:    0px 0px 14px 0px rgba(50, 50, 50, 0.5);
+box-shadow:         0px 0px 14px 0px rgba(50, 50, 50, 0.5);">
+          <div class="row">
+            <div class="col-md-12" style="text-align:left">
+                <table style="width : 100%">
+                    <tr>
+                        <th><h1>Student</h1></th>
+                        <th><h1>Attendance</h1></th>
+                    </tr>
+                 {% for i,j in mylist %}
+                 <tr>
+                     <td>{{i}}</td>
+                     <td>{{j}}/{{differ}}</td>
+                </tr>
+                {%endfor%}
+                </table>    
+            </div>
+        </div>
+        <!-- <div class="col-md-7">
+          <h3>Bio</h3>
+          <p>
+            {{record.bio}}
+          </p>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

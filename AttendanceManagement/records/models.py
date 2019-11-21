@@ -43,7 +43,7 @@ class teacher(models.Model):
     def get_absolute_url(self):
        return reverse('test:details-teacher',kwargs={'id':self.pid})
     def __str__(self):
-        return self.pid
+        return self.pid +'-'+ self.first_name
 
 class subjects(models.Model):
     subcode =models.CharField(max_length=12,primary_key=True)

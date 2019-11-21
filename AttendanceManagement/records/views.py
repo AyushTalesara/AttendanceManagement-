@@ -115,7 +115,6 @@ def enterdetails(request):
                 
             userId=request.POST['usn']
             # print("hello")
-            # print (cv2.__version__)
             faceDetect = cv2.CascadeClassifier(BASE_DIR+'/static/ml/haarcascade_frontalface_default.xml')
             cam = cv2.VideoCapture(0)
             id = userId
@@ -188,6 +187,28 @@ now = datetime.datetime.now()
 l_date=date(now.year,now.month,now.day)
 dayst=np.busday_count(f_date,l_date)
 #print("This is working ")
+def teacherstudent(request):
+    id=request.user.username 
+    teacherid=teacher.objects.get(pid=id)
+    subcode1=teacherid.subcode
+    subje=subjects.objects.get(subcode =subcode1)
+    list1=subje.usn.all()
+    newlist=[]
+    newlist2=[]
+    for i in list1:
+        attendances1=attendances.objects.get(usn=i.usn,subcode=subcode1)
+        stu=student.objects.get(usn=i.usn)
+        newlist2.append(stu.first_name+stu.last_name+'-'+str(i.usn))
+        newlist.append(attendances1.attendance)
+    mylist=zip(newlist2,newlist)
+    context={
+        'mylist':mylist,
+        'differ':dayst
+
+    }
+    print("hello")
+    return render(request,'teacherstudent.html',context)
+
 
 def StudentDetails(request,id):
     

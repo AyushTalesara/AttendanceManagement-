@@ -178,8 +178,7 @@ def detect(request):
     font = cv2.FONT_HERSHEY_SIMPLEX
     userId = 0
     i=0
-    while(i<30):
-        i+=1
+    while(True):
         ret, img = cam.read()
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = faceDetect.detectMultiScale(gray, 1.3, 5)
@@ -208,8 +207,8 @@ def detect(request):
             teach=teacher.objects.filter(pid=userId).first()
             atten=attendances.objects.filter(usn=userId,subcode=subje).first()
             if atten:
-                if userId not in presentst:
-                    presentst.append(userId)
+                if (str(userId)+str(subje)) not in presentst:
+                    presentst.append(str(userId)+str(subje))
                     atten.attendance+=1
                     atten.save()
             elif teach:

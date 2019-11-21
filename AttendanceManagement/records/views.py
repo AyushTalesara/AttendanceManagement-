@@ -185,7 +185,7 @@ class teacherUpdate(UpdateView):
 f_date=date(2019,9,15)
 now = datetime.datetime.now()
 l_date=date(now.year,now.month,now.day)
-dayst=np.busday_count(f_date,l_date)
+dayst=np.busday_count(f_date,l_date)#Excluding Weekends
 #print("This is working ")
 def teacherstudent(request):
     id=request.user.username 
